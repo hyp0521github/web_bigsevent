@@ -1,15 +1,16 @@
 $(function () {
+    // 切换登录表单
     $('#link_reg').on('click', function () {
         $('.login-box').hide();
         $('.reg-box').show();
     });
+    // 切换注册表单
     $('#link_login').on('click', function () {
         $('.login-box').show();
         $('.reg-box').hide();
     });
 });
 const value = $('#repassword').val();
-const repas = $('#repassword')
 //从layui里面获取表单对象
 const form = layui.form;
 const layer = layui.layer;
@@ -25,7 +26,8 @@ form.verify({
             return '请输入相同的密码'
         }
     }
-})
+});
+// 注册事件
 $('#form_reg').on('submit', function (e) {
     // 取消表单的默认提交行为
     e.preventDefault();
@@ -47,6 +49,7 @@ $('#form_reg').on('submit', function (e) {
             $("#form_reg")[0].reset();
         });
 });
+// 登录事件
 $('#form_login').on('submit', function (e) {
     // 取消表单的默认提交行为
     e.preventDefault();
@@ -63,7 +66,7 @@ $('#form_login').on('submit', function (e) {
             // 将登录得到的token字符串存到localStorage里面
             localStorage.setItem('token', res.token)
             // 跳转主页面
-            location.href = '/index.html';
+            location.href = './index.html';
         }
     });
 });
