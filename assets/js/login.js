@@ -33,7 +33,7 @@ $('#form_reg').on('submit', function (e) {
     e.preventDefault();
     const username = $('#name').val();
     const password = $('#password').val();
-    $.post('api/reguser',
+    $.post('/api/reguser',
         {
             username: username,
             password: password
@@ -55,7 +55,7 @@ $('#form_login').on('submit', function (e) {
     e.preventDefault();
     $.ajax({
         method: 'post',
-        url: 'api/login',
+        url: '/api/login',
         data: $(this).serialize(),
         success: function (res) {
             if (res.status !== 0) {
