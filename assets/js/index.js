@@ -1,7 +1,8 @@
 $(function () {
-    getUserInfor()
+    getUserInfor();
+    const layer = layui.layer;
     // 退出按钮
-    $('#signOut').on('click', function (index) {
+    $('#signOut').on('click', function () {
         layer.confirm('确定要退出吗', { icon: 3, title: '提示' }, function () {
             // 清除token
             localStorage.removeItem('token')
@@ -9,7 +10,7 @@ $(function () {
             location.href = './login.html'
         });
         // 关闭询问框
-        layer.close(index);
+        // layer.close(index);
     });
 });
 // 获得用户登录的信息
@@ -31,19 +32,22 @@ function getUserInfor() {
         },
     });
     function renderAvatar(user) {
-        //渲染文本
-        // 第一个有就第一个优先，没有就换另外一个
+        // 获取用户的名称 第一个有就第一个优先，没有就换另外一个
         const name = user.nickname || user.username
+        // 设置欢迎文本
         $('#welcome').html('欢迎&nbsp&nbsp' + name)
-        // 渲染头像
+        // 按需渲染头像
         if (user.user_pic !== null) {
+            // 渲染图片头像
             $('.layui-nav-img').attr('src', user.user_pic).show();
             $('.text-avatar').hide();
-        } 
-        $('.layui-nav-img').hide();
-        // 获取到用户名的第一字母并改为大写
-        const first = name[0].toUpperCase();
-        $('.text-avatar').html(first).show();
-        $('.layui-nav-img').hide();
+        } else {
+            // 渲染文本头像
+            $('.layui-nav-img').hide();
+            // 获取到用户名的第一字母并改为大写
+            const first = name[0].toUpperCase();
+            $('.text-avatar').html(first).show();
+            $('.layui-nav-img').hide();
+        }
     }
 }

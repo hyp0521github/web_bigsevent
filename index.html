@@ -23,9 +23,13 @@
               个人中心
             </a>
             <dl class="layui-nav-child">
-              <dd><a href="">Your Profile</a></dd>
-              <dd><a href="">Settings</a></dd>
-              <dd><a href="">Sign out</a></dd>
+              <dd>
+                <a href="home\essential information.html" target="fm"
+                  >基本资料</a
+                >
+              </dd>
+              <dd><a href="home\avatar.html" target="fm">更换头像</a></dd>
+              <dd><a href="home\updatepwd.html" target="fm">重置密码</a></dd>
             </dl>
           </li>
           <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -91,12 +95,12 @@
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="home\avatar.html" target="fm"
                     ><i class="layui-icon layui-icon-app"></i>更换头像</a
                   >
                 </dd>
                 <dd>
-                  <a href="javascript:;"
+                  <a href="home\updatepwd.html" target="fm"
                     ><i class="layui-icon layui-icon-app"></i>重置密码</a
                   >
                 </dd>
@@ -109,11 +113,6 @@
       <div class="layui-body">
         <!-- 内容主体区域 -->
         <iframe src="home\dashboard.html" frameborder="0" name="fm"> </iframe>
-        <iframe
-          src="home\essential information.html"
-          frameborder="0"
-          name="fm"
-        ></iframe>
       </div>
       <div class="layui-footer">
         <!-- 底部固定区域 -->

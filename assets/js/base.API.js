@@ -18,7 +18,6 @@ $.ajaxPrefilter( function(options) {
 
     // 不管失败还是成功都会调用 complete
      options.complete = function (res) {
-        console.log(res.responseJSON);
         if (res.responseJSON.status === 1&& res.responseJSON.message === '身份认证失败！') {
             // 清空token
              localStorage.removeItem('token');

@@ -1,0 +1,23 @@
+body {
+  background-color: #eef0f2;
+}
+form {
+  margin: 15px;
+  width: 1160px;
+  height: 320px;
+  background-color: #fdfdfb;
+  overflow: hidden;
+}
+h5 {
+  height: 40px;
+  border-bottom: 1px solid #eef0f2;
+  padding: 10px 0 0 30px;
+  line-height: 40px;
+}
+.layui-form-item {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.layui-input-block input {
+  width: 350px;
+}
