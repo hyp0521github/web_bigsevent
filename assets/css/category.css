@@ -1,0 +1,23 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 15px;
+  background-color: #eef0f2;
+  font-weight: 700;
+}
+.layui-card-header {
+  display: flex;
+  /* 俩边贴边对齐 */
+  justify-content: space-between;
+  /* 居中对齐 */
+  align-items: center;
+}
+.layui-form-label {
+  font-weight: 700;
+}
+#add-form {
+  padding-top: 15px;
+}

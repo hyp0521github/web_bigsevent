@@ -26,7 +26,6 @@ $(function () {
       return layer.msg('请选择您要上传的文件')
     }
     // 更换裁剪的图片
-
     // 1拿到用户选择的文件
     const imgfileList = e.target.files[0];
     // 2根据选择的文件，创建一个对应的 URL 地址：
