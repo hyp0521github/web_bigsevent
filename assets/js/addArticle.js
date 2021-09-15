@@ -88,6 +88,12 @@ $(function () {
                 // 得到文件对象后，进行后续的操作
                 // 5.向表单里面追加图片文件
                 formData.append('cover_img', blob);
+
+                // forEach循环 v是属性，k是值
+                // formData.forEach(function (v, k) {
+                //     console.log(v, k);
+                // });
+
                 // 发起ajax请求
                 publishArticle(formData);
             });
@@ -107,10 +113,6 @@ $(function () {
                     location.href = '/home/aticlelist.html'
                 }
             });
-        };      
-        // forEach循环 v是属性，k是值
-        // formData.forEach(function (v, k) {
-        //     console.log(v,k);
-        // })
+        };   
     });
 });

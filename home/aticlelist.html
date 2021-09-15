@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/assets/css/rticlelist.css" />
   </head>
   <body>
-    <div class="layui-card">
+    <div class="layui-card" id="layui-card">
       <div class="layui-card-header">文章列表</div>
       <div class="layui-card-body">
         <!-- 筛选区域-->
@@ -18,7 +18,7 @@
           </div>
           <div class="layui-form-item layui-inline">
             <select name="state">
-              <option value="">所有分类</option>
+              <option value="">所有状态</option>
               <option value="以发布">以发布</option>
               <option value="草稿">草稿</option>
             </select>
@@ -62,6 +62,8 @@
         <td>{{$value.state}}</td>
         <td>
           <button
+            id="btnArticleEdit"
+            data-id="{{$value.Id}}"
             class="layui-btn layui-btn-xs"
             lay-submit
             lay-filter="formDemo"
@@ -90,5 +92,6 @@
     <script src="/assets/js/base.API.js"></script>
     <script src="/assets/lib/template-web.js"></script>
     <script src="/assets/js/articlelist.js"></script>
+    <script src="/assets/js/editArticle.js"></script>
   </body>
 </html>
