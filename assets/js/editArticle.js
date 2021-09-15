@@ -17,7 +17,6 @@ $(function () {
                     if (res.status !== 0) {
                         return layer.msg(res.message);
                     };
-                    // console.log(res.data);
                     assignmentArticle(res.data.title, res.data.cate_id, res.data.content, cover_img)
                 }
             });
@@ -29,8 +28,19 @@ $(function () {
         $('[name=title]').val(title);
         $('[name=cate_id]').val(cate_id);
         $('[name=content]').val(content);
-        $('#image').attr('src', 'cover_img');
+        $('#image').attr('src', cover_img);
     };
+
+    // 1. 初始化图片裁剪器
+    var $image = $('#image');
+
+    // 定义文章发布状态
+    let art_state = '草稿';
+
+    // 点击发布按钮改变状态值
+    $('#btnAddArticle').on('click', function () {
+        art_state = '已发布'
+    });
 
     //监听表单提交事件
     $('#formAddArticle').on('submit', function (e) {
@@ -38,7 +48,6 @@ $(function () {
         e.preventDefault();
         // 2创建form表单
         const formData = new FormData($(this)[0]);
-        console.log(formData);
         // 向表单里面追加文章发布状态
         formData.append('state', art_state);
         //4将裁剪后的图片，输出为文件
